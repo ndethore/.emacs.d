@@ -31,10 +31,6 @@
 ;; Set up appearance early
 (require 'appearance)
 
-;; Settings for currently logged in user
-(setq user-settings-dir
-      (concat user-emacs-directory "users/" user-login-name))
-(add-to-list 'load-path user-settings-dir)
 
 ;; Add external projects to load path
 (dolist (project (directory-files site-lisp-dir t "\\w+"))
@@ -77,11 +73,9 @@
      fill-column-indicator
      flycheck
      flycheck-pos-tip
-     flycheck-clojure
      flx
      f
      flx-ido
-     dired-details
      css-eldoc
      yasnippet
      smartparens
@@ -95,12 +89,8 @@
      whitespace-cleanup-mode
      elisp-slime-nav
      dockerfile-mode
-     clojure-mode
-     clojure-mode-extra-font-locking
      groovy-mode
      prodigy
-     cider
-     yesql-ghosts
      string-edit
      beginend
      )))
@@ -163,7 +153,6 @@
 ;; Language specific setup files
 (eval-after-load 'js2-mode '(require 'setup-js2-mode))
 (eval-after-load 'ruby-mode '(require 'setup-ruby-mode))
-(eval-after-load 'clojure-mode '(require 'setup-clojure-mode))
 (eval-after-load 'markdown-mode '(require 'setup-markdown-mode))
 
 ;; Load stuff on demand
@@ -223,7 +212,6 @@
 
 ;; Misc
 (require 'project-archetypes)
-(require 'my-misc)
 (when is-mac (require 'mac))
 
 ;; Elisp go-to-definition with M-. and back again with M-,
@@ -239,7 +227,3 @@
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
-
-;; Conclude init by setting up specifics for the current user
-(when (file-exists-p user-settings-dir)
-  (mapc 'load (directory-files user-settings-dir nil "^[^#].*el$")))
