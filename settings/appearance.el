@@ -21,26 +21,26 @@
     (add-to-list 'custom-theme-load-path path)))
 
 ;; Default theme
-(defun use-presentation-theme ()
-  (interactive)
-  (when (boundp 'magnars/presentation-font)
-    (set-face-attribute 'default nil :font magnars/presentation-font)))
 
-(defun use-default-theme ()
+(defun use-dark-theme ()
   (interactive)
-  (load-theme 'default-black)
+  (load-theme 'chester-atom)
   (when (boundp 'magnars/default-font)
     (set-face-attribute 'default nil :font magnars/default-font)))
 
-(defun toggle-presentation-mode ()
-  (interactive)
-  (if (string= (frame-parameter nil 'font) magnars/default-font)
-      (use-presentation-theme)
-    (use-default-theme)))
+;; (defun use-light-theme ()
+;;   (interactive)
+;;   (load-theme 'chester-atom))
 
-(global-set-key (kbd "C-<f9>") 'toggle-presentation-mode)
+;; (defun toggle-theme ()
+;;   (interactive)
+;;   (if (string= (frame-parameter nil 'font) magnars/default-font)
+;;       (use-presentation-theme)
+;;     (use-default-theme)))
 
-(use-default-theme)
+;; (global-set-key (kbd "C-<f9>") 'toggle-theme)
+
+(use-dark-theme)
 
 ;; Don't defer screen updates when performing operations
 (setq redisplay-dont-pause t)
