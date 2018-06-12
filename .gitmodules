@@ -112,3 +112,6 @@
 [submodule "site-lisp/datomic-snippets"]
         path = site-lisp/datomic-snippets
         url = https://github.com/magnars/datomic-snippets.git
+[submodule "site-lisp/perspective-el"]
+	path = site-lisp/perspective-el
+	url = https://github.com/nex3/perspective-el
