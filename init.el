@@ -64,7 +64,6 @@
      edn
      inflections
      hydra
-     paredit
      move-text
      gist
      htmlize
@@ -89,7 +88,6 @@
      whitespace-cleanup-mode
      elisp-slime-nav
      dockerfile-mode
-     groovy-mode
      prodigy
      string-edit
      beginend
@@ -128,7 +126,6 @@
 (require 'setup-perspective)
 (require 'setup-ffip)
 (require 'setup-html-mode)
-(require 'setup-paredit)
 (beginend-global-mode)
 
 (require 'prodigy)
@@ -145,9 +142,7 @@
           js-mode-hook
           java-mode
           ruby-mode
-          markdown-mode
-          groovy-mode
-          scala-mode)
+          markdown-mode)
   (add-hook it 'turn-on-smartparens-mode))
 
 ;; Language specific setup files

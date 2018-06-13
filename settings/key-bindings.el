@@ -29,18 +29,18 @@
 
 ;; Mark additional regions matching current region
 (global-set-key (kbd "M-æ") 'mc/mark-all-dwim)
-(global-set-key (kbd "C-å") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-æ") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-Æ") 'mc/mark-more-like-this-extended)
-(global-set-key (kbd "M-å") 'mc/mark-all-in-region)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+;;(global-set-key (kbd "C-m") 'mc/mark-more-like-this-extended)
+(global-set-key (kbd "M-?") 'mc/mark-all-in-region)
 
 ;; Symbol and word specific mark-more
-(global-set-key (kbd "s-æ") 'mc/mark-next-word-like-this)
-(global-set-key (kbd "s-å") 'mc/mark-previous-word-like-this)
-(global-set-key (kbd "M-s-æ") 'mc/mark-all-words-like-this)
-(global-set-key (kbd "s-Æ") 'mc/mark-next-symbol-like-this)
-(global-set-key (kbd "s-Å") 'mc/mark-previous-symbol-like-this)
-(global-set-key (kbd "M-s-Æ") 'mc/mark-all-symbols-like-this)
+(global-set-key (kbd "M->") 'mc/mark-next-word-like-this)
+(global-set-key (kbd "M-<") 'mc/mark-previous-word-like-this)
+(global-set-key (kbd "M-?") 'mc/mark-all-words-like-this)
+(global-set-key (kbd "s->") 'mc/mark-next-symbol-like-this)
+(global-set-key (kbd "s-<") 'mc/mark-previous-symbol-like-this)
+(global-set-key (kbd "s-?") 'mc/mark-all-symbols-like-this)
 
 ;; Extra multiple cursors stuff
 (global-set-key (kbd "C-~") 'mc/reverse-regions)
@@ -56,7 +56,7 @@
 (global-set-key (kbd "C-x r t") 'inline-string-rectangle)
 
 ;; Quickly jump in document with ace-jump-mode
-(define-key global-map (kbd "C-ø") 'ace-jump-mode)
+(define-key global-map (kbd "C-\'") 'ace-jump-mode)
 
 ;; Perform general cleanup.
 (global-set-key (kbd "C-c n") 'cleanup-buffer)
@@ -161,7 +161,7 @@
 (global-set-key (kbd "C-x M-w") 'copy-current-file-path)
 
 ;; Window switching
-(windmove-default-keybindings) ;; Shift+direction
+;; (windmove-default-keybindings) ;; Shift+direction
 (global-set-key (kbd "C-x -") 'toggle-window-split)
 (global-set-key (kbd "C-x C--") 'rotate-windows)
 (global-unset-key (kbd "C-x C-+")) ;; don't zoom like this
@@ -229,7 +229,6 @@
 
 ;; Yank selection in isearch
 (define-key isearch-mode-map (kbd "C-o") 'isearch-yank-selection)
-
 ;; Comment/uncomment block
 (global-set-key (kbd "C-c c") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-c u") 'uncomment-region)
@@ -241,13 +240,15 @@
 (global-set-key (kbd "C-c b") 'create-scratch-buffer)
 
 ;; Move windows, even in org-mode
+(global-set-key (kbd "C-x w") 'windmove-prefix)
+
 (global-set-key (kbd "<s-right>") 'windmove-right)
 (global-set-key (kbd "<s-left>") 'windmove-left)
 (global-set-key (kbd "<s-up>") 'windmove-up)
 (global-set-key (kbd "<s-down>") 'windmove-down)
 
 ;; Magit
-(global-set-key (kbd "C-x m") 'magit-status-fullscreen)
+(global-set-key (kbd "C-x m") 'magit-status-fullscreen) 
 (autoload 'magit-status-fullscreen "magit")
 
 ;; Clever newlines

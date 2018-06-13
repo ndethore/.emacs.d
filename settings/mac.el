@@ -1,8 +1,8 @@
 (require 'dash)
 
 ;; change command to meta, and ignore option to use weird Norwegian keyboard
-(setq mac-option-modifier 'super)
-;;(setq mac-command-modifier 'meta)
+(setq mac-option-modifier 'meta)
+(setq mac-command-modifier 'super)
 (setq ns-function-modifier 'hyper)
 
 
@@ -54,6 +54,11 @@
                 (error "Non-character input-event")))
           (when timer (cancel-timer timer)))))))
 
+;; mac friendly font
+;; (when window-system
+;;   (setq ndethore/default-font "-apple-Monaco-medium-normal-normal-*-16-*-*-*-m-0-iso10646-1")
+;;   (setq ndethore/presentation-font "-apple-Monaco-medium-normal-normal-*-21-*-*-*-m-0-iso10646-1")
+;;   (set-face-attribute 'default nil :font magnars/default-font))
 
 ;; keybinding to toggle full screen mode
 (global-set-key (quote [M-f10]) (quote ns-toggle-fullscreen))

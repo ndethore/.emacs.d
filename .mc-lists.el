@@ -41,6 +41,7 @@
         cua-set-mark
         cycle-spacing
         delete-blank-lines
+        delete-frame
         delete-indentation
         dired-back-to-start-of-files
         down-list
@@ -214,6 +215,7 @@
         mc/add-cursor-on-click
         mc/add-cursors-to-all-matches
         multiple-cursors-mode
+        next-buffer
         ns-prev-frame
         persp-switch
         shell

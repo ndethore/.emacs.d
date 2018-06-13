@@ -202,3 +202,14 @@ Both PATTERN and CONTENTS are matched as regular expressions."
   (back-to-indentation)
   (re-search-backward (s-concat "^" (s-repeat (current-column) " ") "[^ \t\r\n\v\f]"))
   (back-to-indentation))
+
+
+(defun windmove-prefix ()
+  (interactive)
+  (set-transient-map
+   (let ((map (make-sparse-keymap)))
+     (define-key map (kbd "<left>") 'windmove-left)
+     (define-key map (kbd "<right>") 'windmove-right)
+     (define-key map (kbd "<up>") 'windmove-up)
+     (define-key map (kbd "<down>") 'windmove-down) map)
+   t))
